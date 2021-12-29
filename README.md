@@ -28,7 +28,7 @@ Later, a **Genesis VFX 2.0 PRO** version shipped with a less *Kai's Power Tools*
 
 <br><hr><br>
 
-## The Present - *regeneis*
+## The Present - *regenesis*
 
 Several years ago I became suddenly re-interested in how Genesis had functioned - specifically the 'wrap' functionality. I reached out to Andrew to see if he could provide any hints but the intervening years had blurred any memories of the original design (and the code was lost to time). 
 

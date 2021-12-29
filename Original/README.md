@@ -14,7 +14,7 @@ All the original VFX preset files I can lay my hands on, loadable by any full ve
 
 A restricted freeware plugin used to drum up interest in the more feature-complete version; GenesisMF 
 
-![genesismf ui](3dsmax/GenesisMF/GenesisMF_ui.png)
+![genesismf ui](3dsmax/GenesisMF/genesisMF_ui.png)
 
 
 ## Lightwave

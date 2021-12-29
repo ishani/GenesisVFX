@@ -1,0 +1,887 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include <windows.h>
+#include <commctrl.h>
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include <windows.h>\r\n"
+    "#include <commctrl.h>\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MASTER DIALOG DISCARDABLE  0, 0, 422, 344
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GenesisVfX v1.04"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_LENSNAME,11,174,120,15,ES_AUTOHSCROLL
+    PUSHBUTTON      "&wNew",IDC_New,11,193,30,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&Load",IDC_OPEN,41,193,30,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&Save",IDC_SAVE,71,193,30,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&rParameters",IDC_PARAMETERS,101,193,30,15,NOT 
+                    WS_TABSTOP
+    EDITTEXT        IDC_LISTEDIT,11,222,120,15,ES_AUTOHSCROLL
+    LISTBOX         IDC_LISTBOX,11,236,120,79,LBS_NOINTEGRALHEIGHT | 
+                    LBS_EXTENDEDSEL | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&New",IDC_NewElement,11,315,30,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&Copy",IDC_CopyElement,41,315,30,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&Delete",IDC_DeleteElement,71,315,30,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&t",IDC_MoveUP,133,280,15,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&g",IDC_MoveDown,133,295,15,15,NOT WS_TABSTOP
+    CONTROL         "Depth Render",IDC_ZSORT,"Button",BS_AUTOCHECKBOX,12,331,
+                    8,8
+    CONTROL         "Active",IDC_ElementActive,"Button",BS_AUTOCHECKBOX,160,
+                    175,8,8
+    COMBOBOX        IDC_Type,200,174,78,80,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_Dist_EDIT,240,191,36,10,ES_AUTOHSCROLL
+    CONTROL         "Polar Coords",IDC_POLAR,"Button",BS_AUTOCHECKBOX,162,
+                    201,8,8
+    EDITTEXT        IDC_Angle_EDIT,240,201,36,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Dpth_EDIT,240,211,36,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_XPosition_EDIT,240,230,36,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_YPosition_EDIT,240,240,36,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Size_EDIT,240,258,36,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Intensity_EDIT,240,268,36,10,ES_AUTOHSCROLL
+    PUSHBUTTON      "SEdit",IDC_LinkButton,228,259,12,18,NOT WS_TABSTOP
+    CONTROL         "Re-Align",IDC_ReAlign,"Button",BS_AUTOCHECKBOX,162,296,
+                    8,8
+    EDITTEXT        IDC_AngleOffSet_EDIT,240,286,36,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Colourise_EDIT,240,308,36,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Occl_EDIT,240,318,36,10,ES_AUTOHSCROLL
+    CONTROL         "Off Screen Render",IDC_OffScreen,"Button",
+                    BS_AUTOCHECKBOX,162,329,8,8
+    PUSHBUTTON      "&bMake",IDC_BuildFlare,297,247,30,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&Edit",IDC_EditFlare,327,247,30,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&Morph",IDC_MorphElement,357,247,30,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&fNoise",IDC_INFERNO,387,247,30,15,NOT WS_TABSTOP
+    PUSHBUTTON      "L",IDC_ELEMENTLOAD,300,263,28,11,NOT WS_TABSTOP
+    PUSHBUTTON      "S",IDC_ELEMENTSAVE,328,263,28,11,NOT WS_TABSTOP
+    CONTROL         "Real Time",IDC_REALTIME,"Button",BS_AUTOCHECKBOX,366,
+                    265,8,8
+    PUSHBUTTON      "SKey",IDC_SHAPE_KEYFRAME,355,296,30,15,NOT WS_TABSTOP
+    PUSHBUTTON      "PKey",IDC_POSITION_KEYFRAME,385,296,30,15,NOT 
+                    WS_TABSTOP
+    CONTROL         "",IDC_MEGASCROLL,"Static",SS_BLACKFRAME,20,149,345,11
+    PUSHBUTTON      "<",IDC_BACK,10,149,10,11
+    EDITTEXT        IDC_Time_EDIT,375,149,39,12,ES_AUTOHSCROLL
+    CONTROL         "Checkerboard",IDC_CHECKER,"Button",BS_AUTOCHECKBOX,355,
+                    162,8,8
+    CONTROL         "",IDC_MASTERPREVIEW,"Static",SS_BLACKFRAME,10,5,405,144
+    CONTROL         "",IDC_Dist_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,276,191,7,10
+    CONTROL         "",IDC_Size_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,276,258,7,10
+    CONTROL         "",IDC_Angle_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,276,201,7,10
+    CONTROL         "",IDC_XPosition_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,275,230,7,10
+    CONTROL         "",IDC_YPosition_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,276,240,7,10
+    CONTROL         "",IDC_AngleOffSet_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,277,287,7,10
+    PUSHBUTTON      "OK",IDC_MASTER_OK,293,325,42,14,NOT WS_TABSTOP
+    CONTROL         "",IDC_Intensity_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,276,268,7,10
+    CONTROL         "",IDC_SMALLPREVIEW,"Static",SS_BLACKFRAME,297,176,120,
+                    70
+    CONTROL         "",IDC_Time_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,405,149,10,10
+    CONTROL         "",IDC_Colourise_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,276,308,7,10
+    CONTROL         "",IDC_Occl_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,276,318,7,10
+    CONTROL         "",IDC_Dpth_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,276,211,7,10
+    PUSHBUTTON      ">",IDC_FORWARD,365,149,10,11
+    PUSHBUTTON      "Cancel",IDC_MASTER_CANCEL,377,325,42,14,NOT WS_TABSTOP
+    CONTROL         "",IDC_ABSOLUTE,"Button",BS_AUTOCHECKBOX,162,242,8,8
+    PUSHBUTTON      "Help...",IDC_HELPB,335,325,42,14,NOT WS_TABSTOP
+END
+
+IDD_BUILD DIALOG DISCARDABLE  0, 0, 452, 261
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GenesisVfX v1.04 : Element Make"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT1,356,43,35,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,356,63,35,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,356,113,35,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,355,165,35,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,355,185,35,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT5,355,205,35,10,ES_AUTOHSCROLL
+    PUSHBUTTON      "&1I1",IDC_T1,245,18,24,20,NOT WS_TABSTOP
+    PUSHBUTTON      "&2Col",IDC_T2,269,18,24,20,NOT WS_TABSTOP
+    PUSHBUTTON      "&3CB",IDC_T3,293,18,24,20,NOT WS_TABSTOP
+    PUSHBUTTON      "&4EXC",IDC_T4,317,18,24,20,NOT WS_TABSTOP
+    PUSHBUTTON      "&5S1",IDC_T5,341,18,24,20,NOT WS_TABSTOP
+    PUSHBUTTON      "&6S2",IDC_T6,365,18,24,20,NOT WS_TABSTOP
+    PUSHBUTTON      "&7R2B",IDC_T7,389,18,24,20,NOT WS_TABSTOP
+    PUSHBUTTON      "&8B2R",IDC_T8,413,18,24,20,NOT WS_TABSTOP
+    PUSHBUTTON      "&qCir",IDC_S1,246,143,24,20,NOT WS_TABSTOP
+    PUSHBUTTON      "&wELL",IDC_S2,270,143,24,20,NOT WS_TABSTOP
+    PUSHBUTTON      "&eNGON",IDC_S3,294,143,23,20,NOT WS_TABSTOP
+    PUSHBUTTON      "&rSTAR",IDC_S4,317,143,24,20,NOT WS_TABSTOP
+    CONTROL         "Checkerboard",IDC_BUILDCHECKER,"Button",BS_AUTOCHECKBOX,
+                    239,230,8,8
+    CONTROL         "Active Preview",IDC_APV,"Button",BS_AUTOCHECKBOX,239,
+                    244,8,8
+    PUSHBUTTON      "Ok",IDC_BUILD_OK,345,240,50,14,NOT WS_TABSTOP
+    PUSHBUTTON      "Cancel",IDC_BUILD_CANCEL,395,240,50,14,NOT WS_TABSTOP
+    CONTROL         "",IDC_SPIN1,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,393,43,7,10
+    CONTROL         "",IDC_SPIN3,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,393,113,7,10
+    CONTROL         "",IDC_SPIN2,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,393,63,7,10
+    CONTROL         "",IDC_SPIN4,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,393,165,7,10
+    CONTROL         "",IDC_SPIN5,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,393,205,7,10
+    CONTROL         "",IDC_SPIN6,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,393,185,7,10
+    CONTROL         "",IDC_BUILDPREVIEW,"Static",SS_BLACKFRAME,5,5,225,250
+    EDITTEXT        IDC_MAKESEED_EDIT,356,78,35,10,ES_AUTOHSCROLL
+    CONTROL         "",IDC_MAKESEED_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,393,78,7,10
+    CONTROL         "Color",IDC_COL1,"Button",BS_OWNERDRAW,356,96,30,10
+END
+
+IDD_MORPH DIALOG DISCARDABLE  0, 0, 407, 326
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GenesisVfX v1.04 : Element Morph"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_MORPH_PREVIEW_WINDOW,"Static",SS_BLACKFRAME,5,5,
+                    395,155
+    PUSHBUTTON      "Ok",IDC_MORPH_OK,300,305,50,14,NOT WS_TABSTOP
+    PUSHBUTTON      "Cancel",IDC_MORPH_CANCEL,350,305,50,14,NOT WS_TABSTOP
+    CONTROL         "CheckerBoard",IDC_CHECKER,"Button",BS_AUTOCHECKBOX,334,
+                    175,8,8
+    EDITTEXT        IDC_SZ_EDIT,261,255,36,10,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SZ_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,297,255,7,10
+    EDITTEXT        IDC_COL_EDIT,361,255,36,10,ES_AUTOHSCROLL
+    CONTROL         "",IDC_COL_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,397,255,7,10
+    CONTROL         "",IDC_NUM_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,296,195,7,10
+    COMBOBOX        IDC_COMBOFROM,55,231,85,120,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBOTO,55,276,85,120,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_Dist_EDIT,261,215,36,10,ES_AUTOHSCROLL
+    CONTROL         "",IDC_Dist_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,297,215,7,10
+    EDITTEXT        IDC_ANG_EDIT,261,225,36,10,ES_AUTOHSCROLL
+    CONTROL         "",IDC_ANG_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,297,225,7,10
+    EDITTEXT        IDC_ANG2_EDIT,361,245,36,10,ES_AUTOHSCROLL
+    CONTROL         "",IDC_ANG2_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,397,245,7,10
+    EDITTEXT        IDC_XPOS_EDIT,361,215,36,10,ES_AUTOHSCROLL
+    CONTROL         "",IDC_XPOS_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,397,215,7,10
+    EDITTEXT        IDC_YPOS_EDIT,361,225,36,10,ES_AUTOHSCROLL
+    CONTROL         "",IDC_YPOS_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,397,225,7,10
+    EDITTEXT        IDC_Int_EDIT,261,265,36,10,ES_AUTOHSCROLL
+    CONTROL         "",IDC_Int_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,297,265,7,10
+    PUSHBUTTON      "Preview",IDC_SI_LOCK,249,256,12,19,NOT WS_TABSTOP
+    EDITTEXT        IDC_Seed2_EDIT,361,195,36,10,ES_AUTOHSCROLL
+    CONTROL         "",IDC_Seed2_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,397,195,7,10
+    EDITTEXT        IDC_NAMEEDIT,55,201,85,15,ES_AUTOHSCROLL
+    CONTROL         "",IDC_FROMPREVIEW,"Static",SS_BLACKFRAME,145,231,45,40
+    CONTROL         "",IDC_TOPREVIEW,"Static",SS_BLACKFRAME,145,276,45,40
+    EDITTEXT        IDC_Occlusion_EDIT,361,275,36,10,ES_AUTOHSCROLL
+    CONTROL         "",IDC_Occlusion_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,397,275,7,10
+    EDITTEXT        IDC_Depth_EDIT,261,235,36,10,ES_AUTOHSCROLL
+    CONTROL         "",IDC_Depth_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,297,235,7,10
+    EDITTEXT        IDC_NUM_EDIT,261,195,36,10,ES_AUTOHSCROLL
+    CONTROL         "",IDC_MMEGASCROLL,"Static",SS_BLACKFRAME,15,160,335,10
+    PUSHBUTTON      ">",IDC_MFORWARD,350,160,10,10
+    PUSHBUTTON      "<",IDC_MBACK,5,160,10,10
+    EDITTEXT        IDC_MTIME_EDIT,360,160,40,10,ES_AUTOHSCROLL
+    CONTROL         "",IDC_MTIME_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,390,160,10,10
+END
+
+IDD_RENDERPARAMETERS DIALOG DISCARDABLE  0, 0, 396, 305
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GenesisVfX v1.04 : Rendering Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_RenderPreview,"Static",SS_BLACKFRAME,7,7,205,158
+    EDITTEXT        IDC_ImageSizeEdit,182,174,31,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_ImageSizeSpin,"msctls_updown32",
+                    UDS_ARROWKEYS,213,165,8,10
+    CONTROL         "Real Time",IDC_RenderReal,"Button",BS_AUTOCHECKBOX,20,
+                    175,8,8
+    PUSHBUTTON      "Clip&Sel",IDC_RenderClipSel,36,206,39,15,NOT WS_TABSTOP
+    PUSHBUTTON      "Clip&Outside",IDC_RenderClipOutside,94,206,39,15,NOT 
+                    WS_TABSTOP
+    PUSHBUTTON      "&jNoClip",IDC_RenderNoClip,154,206,39,15,NOT WS_TABSTOP
+    EDITTEXT        IDC_XEdit,343,23,36,12,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_XSpin,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,376,24,7,10
+    EDITTEXT        IDC_YEdit,343,42,36,12,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_YSpin,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,376,41,7,10
+    PUSHBUTTON      "&1Selected",IDC_SourceSel,243,27,26,24,NOT WS_TABSTOP
+    PUSHBUTTON      "&Centroid",IDC_Centroid,296,74,39,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&2Int",IDC_SourceInt,244,86,26,24,NOT WS_TABSTOP
+    PUSHBUTTON      "&4Colour",IDC_SourceCol,244,228,26,24,NOT WS_TABSTOP
+    PUSHBUTTON      "&QClose",IDC_CLOSE,329,284,56,14,NOT WS_TABSTOP
+    CONTROL         "Col1",IDC_COL1,"Button",BS_OWNERDRAW,284,225,43,11
+    CONTROL         "Col2",IDC_Col2,"Button",BS_OWNERDRAW,338,225,43,11
+    EDITTEXT        IDC_ToleranceEdit,344,242,36,12,ES_AUTOHSCROLL
+    CONTROL         "Spin3",IDC_ToleranceSpin,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_ARROWKEYS,376,242,9,10
+    PUSHBUTTON      "&3Ext",IDC_SourceExt,244,153,26,24,NOT WS_TABSTOP
+    SCROLLBAR       IDC_HSCROLLBAR,7,165,205,8
+    SCROLLBAR       IDC_VSCROLLBAR,213,7,8,158,SBS_VERT
+    PUSHBUTTON      "F",IDC_ScaleToFit,169,175,12,11,NOT WS_TABSTOP
+    PUSHBUTTON      "&Render And Exit",IDC_RenderExit,269,284,56,14,NOT 
+                    WS_TABSTOP
+    EDITTEXT        IDC_ExtEdit,345,158,36,12,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_ExtSpin,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,378,158,7,10
+    EDITTEXT        IDC_IntEdit,345,178,36,12,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_IntSpin,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,377,177,7,10
+    PUSHBUTTON      "&Multi",IDC_Multi,296,97,39,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&Normal",IDC_AntiNormal,36,267,39,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&Medium",IDC_AntiMedium,94,267,39,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&High",IDC_AntiHigh,154,267,39,15,NOT WS_TABSTOP
+    EDITTEXT        IDC_ColEdit,345,197,36,12,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_ColSpin,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,379,199,9,10
+    PUSHBUTTON      "Co&lorise",IDC_Colourise,296,119,39,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&xNoMask",IDC_NoMask,342,74,39,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&yMaskOut",IDC_MaskOut,342,97,39,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&zMaskIn",IDC_MaskIn,342,119,39,15,NOT WS_TABSTOP
+END
+
+IDD_EDIT DIALOG DISCARDABLE  0, 0, 381, 346
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GenesisVfX v1.04 : Element Edit"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_Value1_EDIT,55,238,36,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Intensity_EDIT,55,278,36,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Location_EDIT,55,297,36,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Falloff_EDIT,55,318,36,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Falloff_EDIT2,55,327,36,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Value2_EDIT,115,238,36,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Repetitions_EDIT,115,257,36,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_NIntensity_EDIT,115,278,36,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_NLocation_EDIT,115,297,36,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_NFalloff_EDIT,115,318,36,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_NFalloff_EDIT2,115,327,36,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LMax_EDIT,201,225,36,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LMin_EDIT,201,235,36,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Seed_EDIT,200,297,36,10,ES_AUTOHSCROLL
+    PUSHBUTTON      "&1Exp2",IDC_Mode1,7,200,24,20,NOT WS_TABSTOP
+    PUSHBUTTON      "&2Exp",IDC_Mode2,31,200,24,20,NOT WS_TABSTOP
+    PUSHBUTTON      "&3Hyp",IDC_Mode3,55,200,24,20,NOT WS_TABSTOP
+    PUSHBUTTON      "&4Lin",IDC_Mode4,79,200,24,20,NOT WS_TABSTOP
+    PUSHBUTTON      "&5Sin",IDC_Mode5,103,200,24,20,NOT WS_TABSTOP
+    PUSHBUTTON      "&6Noise",IDC_Mode6,127,200,24,20,NOT WS_TABSTOP
+    PUSHBUTTON      "R&eset",IDC_RESET,165,200,40,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&Reset Curve",IDC_RESETC,245,200,41,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&zUndo",IDC_UNDO,290,200,41,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&Build",IDC_BUILD,335,200,41,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&Swap",IDC_SWAP,201,250,40,15,NOT WS_TABSTOP
+    PUSHBUTTON      "&Normalise",IDC_Normalise,201,270,40,15,NOT WS_TABSTOP
+    CONTROL         "Checkerboard",IDC_CHECKER,"Button",BS_AUTOCHECKBOX,170,
+                    316,8,8
+    CONTROL         "Active Preview",IDC_RTP,"Button",BS_AUTOCHECKBOX,170,
+                    330,8,8
+    PUSHBUTTON      "Ok",IDC_EDIT_OK,275,325,50,14,NOT WS_TABSTOP
+    PUSHBUTTON      "Cancel",IDC_EDIT_CANCEL,325,325,50,14,NOT WS_TABSTOP
+    CONTROL         "",IDC_REALPREVIEW,"Static",SS_BLACKFRAME,5,40,185,151
+    CONTROL         "",IDC_Intensity_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,91,278,7,10
+    CONTROL         "",IDC_NIntensity_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,151,278,7,10
+    CONTROL         "",IDC_LMax_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,237,225,7,10
+    CONTROL         "",IDC_LMin_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,237,235,7,10
+    CONTROL         "",IDC_Location_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,91,297,7,10
+    CONTROL         "",IDC_NLocation_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,151,297,7,10
+    CONTROL         "",IDC_Falloff_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,91,318,7,10
+    CONTROL         "",IDC_NFalloff_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,151,318,7,10
+    CONTROL         "",IDC_Seed_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,236,297,7,10
+    CONTROL         "",IDC_Repetitions_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,151,257,7,10
+    CONTROL         "",IDC_Falloff_SPIN2,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,91,327,7,10
+    CONTROL         "",IDC_NFalloff_SPIN2,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,151,327,7,10
+    PUSHBUTTON      "L",IDC_FallOffLock,44,319,11,17,NOT WS_TABSTOP
+    CONTROL         "",IDC_PREVIEW_CURVE,"Static",SS_BLACKFRAME,247,225,130,
+                    85
+    CONTROL         "",IDC_PREVIEW,"Static",SS_BLACKFRAME,195,40,185,151
+    CONTROL         "",IDC_Value1_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,91,238,7,10
+    CONTROL         "",IDC_Value2_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,151,238,7,10
+    CONTROL         "",IDC_PREVIEWRA2,"Static",SS_BLACKFRAME,195,10,185,30
+    CONTROL         "",IDC_PREVIEWRA1,"Static",SS_BLACKFRAME,5,10,185,30
+    CONTROL         "",IDC_PLOCK,"Static",SS_BLACKFRAME,195,5,185,5
+    PUSHBUTTON      "Button1",IDC_Colour1,56,227,35,10,NOT WS_TABSTOP
+    PUSHBUTTON      "Button2",IDC_Colour2,116,227,35,10,NOT WS_TABSTOP
+END
+
+IDD_FNOISE DIALOG DISCARDABLE  0, 0, 322, 335
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GenesisVfX v1.04 : Fractal Noise"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "&Turbulence",IDC_FTYPE2,17,183,48,15,NOT WS_TABSTOP
+    EDITTEXT        IDC_SIZEX1_EDIT,115,196,38,11,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SIZEY1_EDIT,115,206,38,11,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DEFORMX1_EDIT,115,220,38,11,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DEFORMY1_EDIT,115,231,38,11,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ANIM1_EDIT,115,250,38,11,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FREQ_EDIT,115,270,38,11,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SIZEX2_EDIT,271,201,38,11,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SIZEY2_EDIT,271,211,38,11,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DEFORMX2_EDIT,271,226,38,11,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DEFORMY2_EDIT,271,236,38,11,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ANIM2_EDIT,270,250,38,11,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LEVELS_EDIT,270,270,38,11,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Seed2_EDIT,115,311,38,11,ES_AUTOHSCROLL
+    CONTROL         "Checkerboard",IDC_NOISECHECKER,"Button",BS_AUTOCHECKBOX,
+                    250,290,8,8
+    CONTROL         "Active Preview",IDC_APV,"Button",BS_AUTOCHECKBOX,250,
+                    300,8,8
+    PUSHBUTTON      "Ok",IDC_INFERNO_OK,215,315,50,14,NOT WS_TABSTOP
+    PUSHBUTTON      "Cancel",IDC_INFERNO_CANCEL,265,315,50,14,NOT WS_TABSTOP
+    CONTROL         "",IDC_INFERNOPREVIEW,"Static",SS_BLACKFRAME,5,5,310,160
+    PUSHBUTTON      "&Regular",IDC_FTYPE1,170,183,48,15,NOT WS_TABSTOP
+    CONTROL         "",IDC_SIZEX2_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,307,201,7,10
+    CONTROL         "",IDC_SIZEY2_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,308,211,7,10
+    CONTROL         "",IDC_DEFORMX2_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,308,226,7,10
+    CONTROL         "",IDC_DEFORMY2_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,307,236,7,10
+    CONTROL         "",IDC_ANIM2_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,307,250,7,10
+    CONTROL         "",IDC_FREQ_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,153,270,7,10
+    PUSHBUTTON      "SEdit",IDC_SZLINK2,259,202,12,19,NOT WS_TABSTOP
+    CONTROL         "",IDC_SIZEX1_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,155,195,7,10
+    PUSHBUTTON      "SEdit",IDC_DFLINK2,259,227,12,19,NOT WS_TABSTOP
+    CONTROL         "",IDC_SIZEY1_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,153,205,7,10
+    CONTROL         "",IDC_DEFORMX1_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,153,220,7,10
+    CONTROL         "",IDC_DEFORMY1_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,153,230,7,10
+    CONTROL         "",IDC_ANIM1_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,153,250,7,10
+    CONTROL         "",IDC_Seed2_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,153,311,7,10
+    PUSHBUTTON      "SEdit",IDC_SZLINK1,103,197,12,19,NOT WS_TABSTOP
+    PUSHBUTTON      "SEdit",IDC_DFLINK1,103,221,12,20,NOT WS_TABSTOP
+    CONTROL         "",IDC_LEVELS_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,307,270,7,10
+END
+
+IDD_FILEPREVIEW DIALOGEX 0, 0, 279, 183
+STYLE DS_3DLOOK | DS_CENTER | WS_CHILD | WS_CLIPSIBLINGS
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_PREVIEW_DIB,"Static",SS_BLACKRECT | SS_SUNKEN,7,
+                    27,267,149
+    CONTROL         "Preview",IDC_PREVIEW,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,7,7,48,14,WS_EX_STATICEDGE
+    PUSHBUTTON      "Catalog",IDC_GENERATE_THUMBNAILS,222,7,50,14,0,
+                    WS_EX_STATICEDGE
+END
+
+IDD_PROGRESS DIALOG DISCARDABLE  0, 0, 191, 30
+STYLE WS_POPUP | WS_THICKFRAME
+FONT 8, "MS Sans Serif"
+BEGIN
+    CTEXT           "Progress",IDC_PROGRESS_TEXT,7,7,177,8
+    CONTROL         "Progress1",IDC_PROGRESS_BAR,"msctls_progress32",
+                    WS_BORDER,7,15,177,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MASTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 415
+        TOPMARGIN, 7
+    END
+
+    IDD_BUILD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+    END
+
+    IDD_MORPH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 400
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 319
+    END
+
+    IDD_RENDERPARAMETERS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 389
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 298
+    END
+
+    IDD_EDIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 374
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 339
+    END
+
+    IDD_FNOISE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 315
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 328
+    END
+
+    IDD_FILEPREVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 272
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+
+    IDD_PROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 184
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 23
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_MASTER DLGINIT
+BEGIN
+    IDC_Type, 0x403, 6, 0
+0x694c, 0x6867, 0x0074, 
+    IDC_Type, 0x403, 7, 0
+0x624f, 0x656a, 0x7463, "\000" 
+    IDC_Type, 0x403, 10, 0
+0x6c42, 0x7275, 0x5220, 0x4247, 0x0041, 
+    IDC_Type, 0x403, 7, 0
+0x6c42, 0x7275, 0x4920, "\000" 
+    IDC_Type, 0x403, 19, 0
+0x6152, 0x2e64, 0x4420, 0x7369, 0x6c70, 0x6361, 0x2065, 0x4752, 0x4142, 
+"\000" 
+    IDC_Type, 0x403, 16, 0
+0x6152, 0x2e64, 0x4420, 0x7369, 0x6c70, 0x6361, 0x2065, 0x0049, 
+    IDC_Type, 0x403, 19, 0
+0x6e41, 0x2e67, 0x4420, 0x7369, 0x6c70, 0x6361, 0x2065, 0x4752, 0x4142, 
+"\000" 
+    IDC_Type, 0x403, 16, 0
+0x6e41, 0x2e67, 0x4420, 0x7369, 0x6c70, 0x6361, 0x2065, 0x0049, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_REGOK               BITMAP  DISCARDABLE     "Dialog\\Register\\RegOk.bmp"
+IDB_LOGO                BITMAP  DISCARDABLE     "Dialog\\Master\\logo.bmp"
+IDB_MASTERHELP          BITMAP  DISCARDABLE     "Dialog\\Master\\MasterHelp.BMP"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_COMPLAIN DIALOG DISCARDABLE  0, 0, 148, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Warning"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,74,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,91,74,50,14
+    CONTROL         215,IDC_STATIC,"Static",SS_BITMAP | SS_CENTERIMAGE,13,4,
+                    120,55
+    CONTROL         "Don't show this warning again.",IDC_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,19,62,110,8
+END
+
+IDD_REGISTER DIALOG DISCARDABLE  0, 0, 289, 282
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Register GenesisVfX 1.04 "
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_REG2,168,235,109,12,ES_UPPERCASE | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "Register",IDC_REG_CLOSE,230,264,54,15
+    EDITTEXT        IDC_REG1,168,207,109,12,ES_UPPERCASE | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    CONTROL         331,IDC_STATIC,"Static",SS_BITMAP | SS_REALSIZEIMAGE,5,3,
+                    85,123
+    GROUPBOX        "GenesisVfX v1.04 is distributed by ",IDC_STATIC,95,1,
+                    188,86,BS_FLAT
+    LTEXT           "Future Fantastic Ltd,",IDC_STATIC,156,28,66,8
+    LTEXT           "WWW: www.futurefantastic.com",IDC_STATIC,141,62,105,8
+    GROUPBOX        "GenesisVfX v1.04 was programmed by ",IDC_STATIC,95,92,
+                    188,34,BS_FLAT
+    LTEXT           "Andrew Cross, Richard Wilson and David Kirkham",
+                    IDC_STATIC,109,108,159,8
+    GROUPBOX        "Future Fantastic would like to thank the following ",
+                    IDC_STATIC,4,129,279,30,BS_FLAT
+    LTEXT           "Nathalie Cross, Manique Wilson, Anton Yemelyanov, Mark Wise, Neil Gateley and everybody else involved",
+                    IDC_STATIC,16,139,249,17
+    GROUPBOX        "How to register GenesisVfX v1.04 ",IDC_STATIC,4,161,279,
+                    98,BS_FLAT
+    LTEXT           "Step 1: Enter your Serial Number which has been supplied to you:",
+                    IDC_STATIC,11,177,141,18
+    EDITTEXT        IDC_SERIAL,168,178,109,12,ES_UPPERCASE | ES_AUTOHSCROLL
+    LTEXT           "Step 2: Send the following Registration Number to Future Fantastic (see documentation):",
+                    IDC_STATIC,11,205,150,18
+    LTEXT           "Step 3: Enter your Authorisation Code that is returned to you from Future Fantastic here:",
+                    IDC_STATIC,11,233,150,18
+    LTEXT           "(c) Copyright 1999 Future Fantastic. All Rights Reserved Worldwide.",
+                    IDC_STATIC,64,262,116,18
+    PUSHBUTTON      "Help...",IDC_HELPB,4,264,54,15
+    PUSHBUTTON      "Evaluate",IDC_EVAL,183,264,45,15
+    LTEXT           "Telephone: +44 (0) 1904 780 800",IDC_STATIC,137,40,107,
+                    8
+    LTEXT           "Fax: +44 (0) 1904 780 800",IDC_STATIC,151,51,84,8
+END
+
+IDD_GEN_ABOUT DIALOG DISCARDABLE  0, 0, 289, 181
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About GenesisVfX 1.04 "
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,229,160,54,15
+    CONTROL         331,IDC_STATIC,"Static",SS_BITMAP | SS_REALSIZEIMAGE,5,5,
+                    85,123
+    GROUPBOX        "GenesisVfX v1.04 is distributed by ",IDC_STATIC,95,4,
+                    188,88,BS_FLAT
+    LTEXT           "Future Fantastic Ltd,",IDC_STATIC,156,30,66,8
+    LTEXT           "Telephone: +44 (0) 1904 780 800",IDC_STATIC,137,41,107,
+                    8
+    LTEXT           "Fax: +44 (0) 1904 780 800",IDC_STATIC,151,52,84,8
+    LTEXT           "WWW: www.futurefantastic.com",IDC_STATIC,140,63,105,8
+    GROUPBOX        "GenesisVfX v1.04 was programmed by ",IDC_STATIC,95,94,
+                    188,34,BS_FLAT
+    GROUPBOX        "Future Fantastic would like to thank the following ",
+                    IDC_STATIC,4,132,279,25,BS_FLAT
+    LTEXT           "Nathalie Cross, Manique Wilson, Anton Yemelyanov and everybody else involved",
+                    IDC_STATIC,16,144,256,8
+    LTEXT           "(c) Copyright 1999 Future Fantastic. All Rights Reserved Worldwide.",
+                    IDC_STATIC,83,160,116,18
+    PUSHBUTTON      "Help...",IDC_HELPB,3,160,50,14
+    LTEXT           "Andrew Cross, Richard Wilson and David Kirkham",
+                    IDC_STATIC,109,110,159,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_COMPLAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 141
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_REGISTER, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 259
+    END
+
+    IDD_GEN_ABOUT, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 158
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_COMPLAIN            BITMAP  DISCARDABLE     "Dialog\\Master\\complain.BMP"
+IDB_GENESISLOGO         BITMAP  DISCARDABLE     "Dialog\\help\\Small_Genesis.bmp"
+IDB_MASTER              BITMAP  DISCARDABLE     "Dialog\\Master\\Master.bmp"
+IDB_ELEMENTNEW          BITMAP  DISCARDABLE     "Dialog\\Master\\ElementNew.BMP"
+IDB_ELEMENTCOPY         BITMAP  DISCARDABLE     "Dialog\\Master\\ElementCopy.BMP"
+IDB_ELEMENTDELETE       BITMAP  DISCARDABLE     "Dialog\\Master\\ElementDelete.BMP"
+IDB_SYSTEMNEW           BITMAP  DISCARDABLE     "Dialog\\Master\\SystemNew.BMP"
+IDB_SYSTEMLOAD          BITMAP  DISCARDABLE     "Dialog\\Master\\SystemLoad.BMP"
+IDB_SYSTEMSAVE          BITMAP  DISCARDABLE     "Dialog\\Master\\SystemSave.BMP"
+IDB_SYSTEMCONFIG        BITMAP  DISCARDABLE     "Dialog\\Master\\SystemConfig.BMP"
+IDB_MASTERLOCK_DOWN     BITMAP  DISCARDABLE     "Dialog\\Master\\LockUp.BMP"
+IDB_MASTERLOCK_UP       BITMAP  DISCARDABLE     "Dialog\\Master\\LockDown.BMP"
+IDB_ANIMATIONSHPUP      BITMAP  DISCARDABLE     "Dialog\\Master\\ANimationShapeUp.BMP"
+IDB_ANIMATIONSHPDOWN    BITMAP  DISCARDABLE     "Dialog\\Master\\ANimationShape.BMP"
+IDB_ANIMATIONPOSUP      BITMAP  DISCARDABLE     "Dialog\\Master\\ANimationPosnUp.BMP"
+IDB_ANIMATIONPOSDOWN    BITMAP  DISCARDABLE     "Dialog\\Master\\ANimationPosn.BMP"
+IDB_SHAPEEDIT           BITMAP  DISCARDABLE     "Dialog\\Master\\ShapeNoise.BMP"
+IDB_SHAPEMAKE           BITMAP  DISCARDABLE     "Dialog\\Master\\ShapeMorph.BMP"
+IDB_SHAPEMORPH          BITMAP  DISCARDABLE     "Dialog\\Master\\ShapeMake.BMP"
+IDB_SHAPENOISE          BITMAP  DISCARDABLE     "Dialog\\Master\\ShapeEdit.BMP"
+IDB_SHAPELOAD           BITMAP  DISCARDABLE     "Dialog\\Master\\ShapeSave.BMP"
+IDB_SHAPESAVE           BITMAP  DISCARDABLE     "Dialog\\Master\\ShapeLoad.BMP"
+IDB_UPARROW             BITMAP  DISCARDABLE     "Dialog\\Master\\UpArrow.BMP"
+IDB_ARROWDOWN           BITMAP  DISCARDABLE     "Dialog\\Master\\DownArrow.BMP"
+IDB_MASTEROK            BITMAP  DISCARDABLE     "Dialog\\Master\\MasterOk.BMP"
+IDB_MASTERCANCEL        BITMAP  DISCARDABLE     "Dialog\\Master\\MasterCancel.BMP"
+IDB_EDIT                BITMAP  DISCARDABLE     "Dialog\\Edit\\Edit.BMP"
+IDB_EXP2                BITMAP  DISCARDABLE     "Dialog\\Edit\\Exp2.BMP"
+IDB_EXP                 BITMAP  DISCARDABLE     "Dialog\\Edit\\Exp.BMP"
+IDB_HYP                 BITMAP  DISCARDABLE     "Dialog\\Edit\\Hyp.BMP"
+IDB_LIN                 BITMAP  DISCARDABLE     "Dialog\\Edit\\Lin.BMP"
+IDB_SIN                 BITMAP  DISCARDABLE     "Dialog\\Edit\\Sin.BMP"
+IDB_NOISE               BITMAP  DISCARDABLE     "Dialog\\Edit\\Noise.BMP"
+IDB_SIN_PUSHED          BITMAP  DISCARDABLE     "dialog\\Edit\\sin_PUSHED.bmp"
+IDB_NOISE_PUSHED        BITMAP  DISCARDABLE     "dialog\\Edit\\noise_pushed.bmp"
+IDB_LIN_PUSHED          BITMAP  DISCARDABLE     "dialog\\Edit\\lin_pushed.bmp"
+IDB_HYP_PUSHED          BITMAP  DISCARDABLE     "dialog\\Edit\\hyp_pushed.bmp"
+IDB_EXP2_PUSHED         BITMAP  DISCARDABLE     "dialog\\Edit\\exp2_pushed.bmp"
+IDB_EXP_PUSHED          BITMAP  DISCARDABLE     "dialog\\Edit\\exp_pushed.bmp"
+IDB_BUILD               BITMAP  DISCARDABLE     "Dialog\\Edit\\Build.BMP"
+IDB_NORMALISE           BITMAP  DISCARDABLE     "Dialog\\Edit\\Normalise.BMP"
+IDB_RESET               BITMAP  DISCARDABLE     "Dialog\\Edit\\Reset.BMP"
+IDB_RESETCURVE          BITMAP  DISCARDABLE     "Dialog\\Edit\\ResetCurve.BMP"
+IDB_SWAP                BITMAP  DISCARDABLE     "Dialog\\Edit\\Swap.BMP"
+IDB_UNDO                BITMAP  DISCARDABLE     "Dialog\\Edit\\Undo.BMP"
+IDB_EDIT_LOCKDOWN       BITMAP  DISCARDABLE     "Dialog\\Edit\\LockUp.BMP"
+IDB_EDIT_LOCKUP         BITMAP  DISCARDABLE     "Dialog\\Edit\\LockDown.BMP"
+IDB_MAKE                BITMAP  DISCARDABLE     "Dialog\\Make\\Make.BMP"
+IDB_MAKE_BUTTON1        BITMAP  DISCARDABLE     "Dialog\\Make\\Button1.BMP"
+IDB_MAKE_BUTTON2        BITMAP  DISCARDABLE     "Dialog\\Make\\Button2.BMP"
+IDB_MAKE_BUTTON3        BITMAP  DISCARDABLE     "Dialog\\Make\\Button3.BMP"
+IDB_MAKE_BUTTON4        BITMAP  DISCARDABLE     "Dialog\\Make\\Button4.BMP"
+IDB_MAKE_BUTTON5        BITMAP  DISCARDABLE     "Dialog\\Make\\Button5.BMP"
+IDB_MAKE_BUTTON6        BITMAP  DISCARDABLE     "Dialog\\Make\\Button6.BMP"
+IDB_MAKE_BUTTON7        BITMAP  DISCARDABLE     "Dialog\\Make\\Button7.BMP"
+IDB_MAKE_BUTTON8        BITMAP  DISCARDABLE     "Dialog\\Make\\Button8.BMP"
+IDB_MAKE_BUTTON2_1      BITMAP  DISCARDABLE     "Dialog\\Make\\Button2_1.BMP"
+IDB_MAKE_BUTTON2_2      BITMAP  DISCARDABLE     "Dialog\\Make\\Button2_2.BMP"
+IDB_MAKE_BUTTON2_3      BITMAP  DISCARDABLE     "Dialog\\Make\\Button2_3.BMP"
+IDB_MAKE_BUTTON2_4      BITMAP  DISCARDABLE     "Dialog\\Make\\Button2_4.BMP"
+IDB_MAKE_BUTTON1B       BITMAP  DISCARDABLE     "Dialog\\Make\\Button1_UnPushed.bmp"
+IDB_MAKE_BUTTON2B       BITMAP  DISCARDABLE     "Dialog\\Make\\Button2_UnPushed.bmp"
+IDB_MAKE_BUTTON3B       BITMAP  DISCARDABLE     "Dialog\\Make\\Button3_UnPushed.bmp"
+IDB_MAKE_BUTTON4B       BITMAP  DISCARDABLE     "Dialog\\Make\\Button4_UnPushed.bmp"
+IDB_MAKE_BUTTON5B       BITMAP  DISCARDABLE     "Dialog\\Make\\Button5_UnPushed.bmp"
+IDB_MAKE_BUTTON6B       BITMAP  DISCARDABLE     "Dialog\\Make\\Button6_UnPushed.bmp"
+IDB_MAKE_BUTTON7B       BITMAP  DISCARDABLE     "Dialog\\Make\\Button7_UnPushed.bmp"
+IDB_MAKE_BUTTON8B       BITMAP  DISCARDABLE     "Dialog\\Make\\Button8_UnPushed.bmp"
+IDB_MAKE_BUTTON2_1B     BITMAP  DISCARDABLE     "Dialog\\Make\\Button2_1_UnPushed.bmp"
+IDB_MAKE_BUTTON2_2B     BITMAP  DISCARDABLE     "Dialog\\Make\\Button2_2_UnPushed.bmp"
+IDB_MAKE_BUTTON2_3B     BITMAP  DISCARDABLE     "Dialog\\Make\\Button2_3_UnPushed.bmp"
+IDB_MAKE_BUTTON2_4B     BITMAP  DISCARDABLE     "dialog\\master\\bitmap1.bmp"
+IDB_MORPH               BITMAP  DISCARDABLE     "Dialog\\Morph\\Morph.BMP"
+IDB_NOISEDLG            BITMAP  DISCARDABLE     "Dialog\\Noise\\Noise.BMP"
+IDB_INFERNOUP1          BITMAP  DISCARDABLE     "Dialog\\Noise\\RegularActive.BMP"
+IDB_INFERNOUP2          BITMAP  DISCARDABLE     "Dialog\\Noise\\TurbActive.bmp"
+IDB_INFERNODOWN1        BITMAP  DISCARDABLE     "Dialog\\Noise\\TurbActive_Down.BMP"
+IDB_INFERNODOWN2        BITMAP  DISCARDABLE     "Dialog\\Noise\\RegularActive_Down.BMP"
+IDB_REGLOCKUP           BITMAP  DISCARDABLE     "Dialog\\Noise\\RegularLock_Up.BMP"
+IDB_REGLOCKDOWN         BITMAP  DISCARDABLE     "Dialog\\Noise\\RegularLock_Down.BMP"
+IDB_TURLOCKUP           BITMAP  DISCARDABLE     "Dialog\\Noise\\TurbLock_Up.BMP"
+IDB_TURLOCKDOWN         BITMAP  DISCARDABLE     "Dialog\\Noise\\TurbLock_Down.BMP"
+IDB_RENDER              BITMAP  DISCARDABLE     "Dialog\\Render\\render.BMP"
+IDB_CENTROID            BITMAP  DISCARDABLE     "Dialog\\Render\\centroid.BMP"
+IDB_COLORISE            BITMAP  DISCARDABLE     "Dialog\\Render\\colorise.BMP"
+IDB_COLOUR              BITMAP  DISCARDABLE     "Dialog\\Render\\colour.BMP"
+IDB_EXTERNAL            BITMAP  DISCARDABLE     "Dialog\\Render\\external.BMP"
+IDB_HIGH                BITMAP  DISCARDABLE     "Dialog\\Render\\high.BMP"
+IDB_INSIDE              BITMAP  DISCARDABLE     "Dialog\\Render\\inside.bmp"
+IDB_INTERNAL            BITMAP  DISCARDABLE     "Dialog\\Render\\internal.BMP"
+IDB_MASKEXT             BITMAP  DISCARDABLE     "Dialog\\Render\\maskext.BMP"
+IDB_MASKINT             BITMAP  DISCARDABLE     "Dialog\\Render\\maskint.BMP"
+IDB_MEDIUM              BITMAP  DISCARDABLE     "Dialog\\Render\\medium.BMP"
+IDB_MULTI               BITMAP  DISCARDABLE     "Dialog\\Render\\multi.BMP"
+IDB_NOMASK              BITMAP  DISCARDABLE     "Dialog\\Render\\nomask.BMP"
+IDB_NONE                BITMAP  DISCARDABLE     "Dialog\\Render\\none.BMP"
+IDB_NORMAL              BITMAP  DISCARDABLE     "Dialog\\Render\\normal.BMP"
+IDB_OUTSIDE             BITMAP  DISCARDABLE     "Dialog\\Render\\outside.bmp"
+IDB_RESIZE              BITMAP  DISCARDABLE     "Dialog\\Render\\resize.bmp"
+IDB_SINGLE              BITMAP  DISCARDABLE     "Dialog\\Render\\single.BMP"
+IDB_RENDEREXIT          BITMAP  DISCARDABLE     "Dialog\\Render\\renderexit.bmp"
+IDB_CLOSE               BITMAP  DISCARDABLE     "Dialog\\Render\\close.BMP"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PIPL
+//
+
+16000 PIPL DISCARDABLE 
+BEGIN
+    0x0001, 0x0000, 0x0000, 0x0009, 0x0000, 0x494d, 0x3842, 0x6e64, 0x6b69, 
+    0x0000, 0x0000, 0x0004, 0x0000, 0x464d, 0x3842, 0x494d, 0x3842, 0x6d65, 
+    0x6e61, 0x0000, 0x0000, 0x0010, 0x0000, 0x470d, 0x6e65, 0x7365, 0x7369, 
+    0x6656, 0x2e58, 0x2e2e, 0x0000, 0x494d, 0x3842, 0x7467, 0x6361, 0x0000, 
+    0x0000, 0x000c, 0x0000, 0x470a, 0x6e65, 0x7365, 0x7369, 0x6656, 0x0058, 
+    0x494d, 0x3842, 0x7273, 0x7665, 0x0000, 0x0000, 0x0004, 0x0000, 0x0000, 
+    0x0004, 0x494d, 0x3842, 0x3836, 0x7778, 0x0000, 0x0000, 0x000c, 0x0000, 
+    0x4e45, 0x5254, 0x5059, 0x494f, 0x544e, 0x0000, 0x494d, 0x3842, 0x746d, 
+    0x6873, 0x0000, 0x0000, 0x0014, 0x0000, 0x0000, 0x0000, 0x4b42, 0x7364, 
+    0x724d, 0x636c, 0x3e80, 0x0000, 0x0000, 0x0000, 0x494d, 0x3842, 0x6465, 
+    0x6d6f, 0x0000, 0x0000, 0x0004, 0x0000, 0x0050, 0x0000, 0x494d, 0x3842, 
+    0x626c, 0x656e, 0x0000, 0x0000, 0x0030, 0x0000, 0x6e69, 0x2820, 0x5350, 
+    0x4f48, 0x5f50, 0x6d49, 0x6761, 0x4d65, 0x646f, 0x2c65, 0x4720, 0x6172, 
+    0x5379, 0x6163, 0x656c, 0x6f4d, 0x6564, 0x202c, 0x4752, 0x4d42, 0x646f, 
+    0x2965, 0x0000, 0x0000, 0x494d, 0x3842, 0x6369, 0x6669, 0x0000, 0x0000, 
+    0x001c, 0x0000, 0x0101, 0x000a, 0x0101, 0x000a, 0x0101, 0x000a, 0x0202, 
+    0x000a, 0x0202, 0x000a, 0x0202, 0x000a, 0x0202, 0x000a
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    16990                   "An integer is required between ^1 and ^2."
+    16991                   "A decimal number is required between ^1 and ^2."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    16992                   "This plug-in requires Adobe Photoshop® ^1 or later functionality."
+    16993                   "This plug-in is incompatible with this version of the host program."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    16000                   "GenesisVfX\n\nVersion 104 Release 2 (11/96)\nCopyright © 1996, R. C. Wilson and A. D. J. Cross.\nAll rights reserved.\n\nGenesis®."
+    16001                   "GenesisVfX"
+END
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

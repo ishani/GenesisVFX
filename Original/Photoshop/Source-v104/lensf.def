@@ -1,0 +1,33 @@
+LIBRARY		"GENESIS"
+DESCRIPTION 'GENESIS Windows Dynamic Link Library'
+
+CODE	PRELOAD MOVEABLE
+DATA	PRELOAD MOVEABLE SINGLE
+
+EXPORTS
+	ENTRYPOINT				@1
+	ICustButtonCallback		@2
+	ISpinnerEditCallback	@3
+	ISpinnerControlCallback	@4
+	IColorSwatchCallback	@5
+	EditBuildCtrlDlgProc	@6
+	EditRadialCtrlDlgProc	@7
+	EditMasterCtrlDlgProc	@8
+	AboutCtrlDlgProc		@9
+	MorphPreviewProc		@10
+	EditMorphCtrlDlgProc	@11
+	MorphPreviewProc		@13
+	MorphBSPreviewProc		@14
+	MorphMScrollBarProc		@15
+	InfernoMasterCtrlDlgProc @16
+	MScrollBarProc			@17
+	MasterSmallPreviewProc	@18
+	MasterPreviewProc		@19
+	EditCurvePreviewProc	@20
+	RealPreviewProc			@21
+	EditPreviewProc			@22
+	RA2PreviewProc			@23
+	RA1PreviewProc			@24
+	EditLockProc			@25
+	BuildPreviewProc		@26
+	test					@27

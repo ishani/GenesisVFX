@@ -1,0 +1,7 @@
+#define TREE_ELEMENT			0
+#define POINT_ELEMENT			1
+#define REGION_ELEMENT			2
+#define SOURCE_ELEMENT			3
+#define CHANNEL_ELEMENT			4
+#define IMAGE_ELEMENT			5
+#define INPUTIMAGES_ELEMENT		6

@@ -1,0 +1,14 @@
+#ifndef __VFX_DRAGNDROP_TYPES__
+#define __VFX_DRAGNDROP_TYPES__
+
+// These are the types supported by Drag'n'Drop
+
+#define		DRAGNDROP_RADIAL_COLOUR			1
+#define		DRAGNDROP_ANGULAR_COLOUR		2
+#define		DRAGNDROP_SINGLE_ANIMATEABLE	3
+#define		DRAGNDROP_ICOLORSWATCH			4
+#define		DRAGNDROP_SUBFLARE				5
+#define		DRAGNDROP_FLAREELEMENT			6
+#define		DRAGNDROP_BITMAP				7
+
+#endif

@@ -1,0 +1,109 @@
+#define RSCL32(a,b,c,d)		0x ## c ## d, 0x ## a ## b
+#define RSCS32(a)		a, 0x0
+
+STRINGTABLE	DISCARDABLE
+BEGIN
+	16990,
+	"An integer is required between ^1 and ^2."
+END
+
+STRINGTABLE	DISCARDABLE
+BEGIN
+	16991,
+	"A decimal number is required between ^1 and ^2."
+END
+
+STRINGTABLE	DISCARDABLE
+BEGIN
+	16992,
+	"This plug-in requires Adobe Photoshop® ^1 or later functionality."
+END
+
+STRINGTABLE	DISCARDABLE
+BEGIN
+	16993,
+	"This plug-in is incompatible with this version of the host program."
+END
+
+STRINGTABLE	DISCARDABLE
+BEGIN
+	16001,
+	"GenesisVfX"
+END
+
+16000  PiPL  DISCARDABLE
+BEGIN
+	0x0001,	 /* Must always be the first Byte */
+	RSCS32(0), 	/* kCurrentPiPLVersion */
+	RSCS32(  9), /* Property Count */
+	"MIB8",
+	"dnik", /* 'kind' PIKindProperty*/
+	RSCS32(0),
+	RSCS32(4),
+	"MFB8",
+
+	"MIB8",
+	"eman",/* 'name' PINameProperty */
+	RSCS32(0),
+	RSCS32(16),
+	"\x0DGenesisVfX...\0\0", 
+
+	"MIB8",
+	"gtac", /* 'catg' PICategoryProperty */
+	RSCS32(0),
+	RSCS32(12),
+	"\x0AGenesisVfX\0", 
+
+	"MIB8",
+	"srev", /* 'vers' PIVersionProperty */
+	RSCS32(0),
+	RSCS32(4),
+	0, 4, 
+
+	"MIB8",
+	"68xw", /* 'wx86' PIWin32X86CodeProperty */
+	RSCS32(0),
+	RSCS32(12),
+	"ENTRYPOINT\0\0", 
+
+	"MIB8",
+	"mtsh", /* 'hstm' PITerminology */
+	RSCS32(0),
+	RSCS32(20),
+	RSCS32(0), /* version */
+	"BKds", /* classID */
+	"Mrlc", /* eventID */
+	16000, /* Terminology ID */
+	"\0\0\0\0\0\0", /* Unique string */
+
+	"MIB8",
+	"edom", /* 'mode' PIImageModesProperty */
+	RSCS32(0),
+	RSCS32(4),
+	"\x50\x00\0\0",
+
+	"MIB8",
+	"lbne", /* 'enbl' EnableInfoProperty */
+	RSCS32(0),
+	RSCS32(48),
+	"in (PSHOP_ImageMode, GrayScaleMode, RGBMode)\0\0\0\0", 
+
+	"MIB8",
+	"icif", /* PIFilterCaseInfoProperty */
+	RSCS32(0),
+	RSCS32(28),
+	"\x01\x01\x0A\x00",
+	"\x01\x01\x0A\x00",
+	"\x01\x01\x0A\x00",
+	"\x02\x02\x0A\x00",
+	"\x02\x02\x0A\x00",
+	"\x02\x02\x0A\x00",
+	"\x02\x02\x0A\x00"
+END
+
+STRINGTABLE	DISCARDABLE
+BEGIN
+	16000,
+	"GenesisVfX\n\nVersion 104 Release 2 (11/96)\nCopyright © 1996, R. C. Wilson and A. D. J. Cross.\nAll rights reserved.\n\nGenesis®."
+END
+

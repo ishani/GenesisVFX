@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+    <head>
+        <title>README</title>
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap"> 
+        <link rel="stylesheet" href="mamd.css">
+    </head>
+    <body>
+        <h2 id="genesis-vfx-for-paintnet">Genesis VFX for Paint.NET</h2>
+<h4 id="built-on-regenesis--asphalt-by-harry-denholm-ishaniorg-2021">built on regenesis &amp; asphalt by Harry Denholm, ishani.org 2021</h4>
+<p><a href="https://github.com/ishani/GenesisVFX">https://github.com/ishani/GenesisVFX</a></p>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li><a href="https://www.getpaint.net/">Paint.NET</a> 4.2 or higher (tested in 4.2 and 4.3)</li>
+<li>The plugin UI requires a resolution of at least 1600x1000</li>
+</ul>
+<p><br><hr><br></p>
+<p>This is a manual installation of the Genesis VFX plugin for Paint.NET.</p>
+<h2 id="step-1">Step 1</h2>
+<p>Copy the contents of <code>\Effects</code> into <code>C:\Program Files\paint.net\Effects</code></p>
+<ul>
+<li><code>\Effects\GenesisVFX.Asphalt.Controls.dll</code></li>
+<li><code>\Effects\GenesisVFX.Asphalt.Fonts.dll</code></li>
+<li><code>\Effects\GenesisVFX.Asphalt.PDN.dll</code></li>
+<li><code>\Effects\GenesisVFX.dll</code></li>
+<li><code>\Effects\GenesisVFX.Runtime\Regenesis64.dll</code></li>
+</ul>
+<p>This is the UI libraries (<em>asphalt</em>), the Paint.NET plugin (<em>GenesisVFX.dll</em>) and the <em>regenesis</em> rendering engine runtime.</p>
+<p>If the rendering runtime is missing, you will be told upon startup</p>
+<p><img src="Doc/MissingRuntime.png" alt="missing-runtime" /></p>
+<br>
+<p>If the runtime cannot load, it will cause an exception</p>
+<p><img src="Doc/BrokenRuntime.png" alt="runtime-exception" /></p>
+<p>.. this is most likely due to missing Visual Studio runtime libraries. You can download an installer from Microsoft <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">here</a> (from <a href="https://docs.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msvc-170">reference</a>)</p>
+<p><br><hr></p>
+<h2 id="step-2">Step 2</h2>
+<p>Genesis VFX loads preset collections from a zip file; we provide a great selection of examples in the <code>\Library</code> folder. Copy <code>regenesis-library.zip</code> somewhere .. such as your <em>Documents</em> folder, or somewhere you'll know where to find it.</p>
+<p><br><hr></p>
+<h2 id="step-3">Step 3</h2>
+<p>Run Paint.NET; access <strong>Genesis VFX</strong> from the <strong>Effects / Render</strong> menu</p>
+<p><img src="Doc/RenderMenu.png" alt="menu" /></p>
+<p>Initially, you'll have no preset zip loaded - select one using the top-left load button</p>
+<p><img src="Doc/MissingPack.png" alt="load-preset" /></p>
+<p>.. and go find where you copied the <code>regenesis-library.zip</code> file.</p>
+<p>Browse and select presets from the collection; note that if you are rendering onto a white background, you may not be able to see many effects as they are designed to be additive. Switch to a solid background colour or load an image first.</p>
+<p><img src="Doc/GUI_1.png" alt="gui step 1" /></p>
+<p>If the live preview window is sluggish, try selecting a lower-resolution preview with the right-most (lightning bolt icon) button under the viewport.</p>
+<p>Note: most buttons have tooltips to help!</p>
+<p><img src="Doc/Tooltip.png" alt="gui step 2" /></p>
+<p>Once happy, click <strong>Complete</strong> to render the result back to Paint.NET - or <strong>Cancel</strong> to abort.</p>
+<p><img src="Doc/GUI_2.png" alt="gui step 3" /></p>
+<p><br><hr></p>
+<h2 id="note">Note</h2>
+<p>To load custom loose preset .GFX files, place them in the user files folder</p>
+<p><code>C:\Users\&lt;Username&gt;\Documents\paint.net User Files\GenesisVFX\</code></p>
+<p>.. and they will appear in a special <strong>User</strong> folder in Genesis VFX</p>
+<p><img src="Doc/User.png" alt="user menu" /></p>
+<p>If you want to create .GFX files you will need to use the original Genesis VFX plugin - ensure you save in the 1.00 file format if you're using <em>Genesis VFX 2 Pro</em> to do so.</p>
+<p><br><hr><br></p>
+<h2 id="note---optional-optimiizations">Note - Optional Optimizations</h2>
+<p>If you have a reasonably recent CPU, you can try the more intensively optimised rendering runtime. Copy the contents of the <code>Optional-ICC\GenesisVFX.Runtime</code> directory into <code>C:\Program Files\paint.net\Effects\GenesisVFX.Runtime</code> overwriting the contents.</p>
+
+    </body>
+</html>

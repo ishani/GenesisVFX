@@ -85,7 +85,7 @@ If you want to create .GFX files you will need to use the original Genesis VFX p
 
 <br><hr><br>
 
-## Note - Optional Optimiizations
+## Note - Optional Optimizations
 
 If you have a reasonably recent CPU, you can try the more intensively optimised rendering runtime. Copy the contents of the `Optional-ICC\GenesisVFX.Runtime` directory into `C:\Program Files\paint.net\Effects\GenesisVFX.Runtime` overwriting the contents.
 

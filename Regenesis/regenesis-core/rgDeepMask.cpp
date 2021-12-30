@@ -12,12 +12,14 @@
 #include "rgCommon.h"
 #include "rgDeepMask.h"
 #include "rgTween.h"
+#include "rgMath.h"
 
 #include "FastNoise.h"
 
-
-#define DEBUG_DEEP_MASK_PHASESx
-#define DEBUG_DEEP_MASK_RELDIR      "./tests/debug_"
+// enable this define to have debug images exported into local directories; /debug/blur, /debug/fill, /debug/sdf, /debug/udf
+// note that it expects the directories to already exist currently, it won't go and make them itself
+// #define DEBUG_DEEP_MASK_PHASES
+#define DEBUG_DEEP_MASK_RELDIR      "./debug/"
 
 // ---------------------------------------------------------------------------------------------
 MaskElement FloodFill(
@@ -81,6 +83,14 @@ MaskElement FloodFill(
                 c.g = 50;
             }
         });
+
+        if ( remaskedPixels > 0 )
+        {
+            int32_t ctX = (int32_t)(centroid.x / (double)remaskedPixels);
+            int32_t ctY = (int32_t)(centroid.y / (double)remaskedPixels);
+            snapshot( ctX, ctY ).r = 150;
+            snapshot( ctX, ctY ).b = 255;
+        }
 #endif // DEBUG_DEEP_MASK_PHASES
 
         for ( int32_t _y = 0; _y < maskHeight; _y++ )
@@ -154,7 +164,7 @@ MaskElement FloodFill(
         {
             char _snapPath[255];
             sprintf( _snapPath, DEBUG_DEEP_MASK_RELDIR "fill/pass_%02x_%u.png", maskCurrentElement, floodFillePasses );
-            writeBufferToPNG( snapshot, _snapPath );
+            writeOutBufferAsImage( snapshot, _snapPath, OutputFormat::AsPNG, true );
         }
 #endif // DEBUG_DEEP_MASK_PHASES
 
@@ -192,9 +202,9 @@ void UDF(
     ColourFBuffer snapshot( maskWidth, maskHeight );
     snapshot.clear( ColourF::s_black );
 
-    // define a function that will walk the current udf and emit the distance values as a hue-sweep, with the core mask tagged white
+    // define a function that will walk the current udf and emit the distance values as a gradient, with the core mask tagged white
     auto do_snapshot = [&](const char* phase) {
-        static const float hueScaleRecp = 1.0f / std::max( maskWidth, maskHeight );
+        static const float gradientScaleRecp = 3.0f / std::max( maskWidth, maskHeight );
 
         snapshot.forEach( [&]( const int32_t index, ColourF& c ) {
             if ( udfOut[index] >= FLT_MAX )
@@ -203,8 +213,8 @@ void UDF(
             }
             else if ( udfOut[index] > 0.0f )
             {
-                float hue = (float)udfOut[index] * hueScaleRecp;
-                HSV_to_RGB( hue, 1.0f, 1.0f, c.r, c.g, c.b );
+                float hue = (float)udfOut[index] * gradientScaleRecp;
+                c = ColourF::gradientPlasma( 1.0f - pingpong01(hue) );
             }
             else
             {
@@ -213,7 +223,7 @@ void UDF(
         });
 
         sprintf( _snapPath, DEBUG_DEEP_MASK_RELDIR "udf/%s.png", phase );
-        writeBufferToPNG( snapshot, _snapPath );
+        writeOutBufferAsImage( snapshot, _snapPath, OutputFormat::AsPNG, true );
     };
 #endif // DEBUG_DEEP_MASK_PHASES
 
@@ -565,18 +575,18 @@ void BlurMono(
     ColourFBuffer snapshot( bufWidth, bufHeight );
     snapshot.clear( ColourF::s_black );
 
-    static const float hueScaleRecp = 1.0f / std::max( bufWidth, bufHeight );
+    static const float hueScaleRecp = 3.0f / std::max( bufWidth, bufHeight );
 
     snapshot.forEach( [&]( const int32_t index, ColourF& c ) {
         if ( buffer[index] > 0.0f )
         {
             float hue = (float)buffer[index] * hueScaleRecp;
-            HSV_to_RGB( hue, 1.0f, 1.0f, c.r, c.g, c.b );
+            c = ColourF::gradientPlasma( 1.0f - pingpong01( hue ) );
         }
     });
 
     sprintf( _snapPath, DEBUG_DEEP_MASK_RELDIR "blur/result.png" );
-    writeOutBufferAsImage( snapshot, _snapPath, OutputFormat::AsPNG);
+    writeOutBufferAsImage( snapshot, _snapPath, OutputFormat::AsPNG, true );
 
 #endif // DEBUG_DEEP_MASK_PHASES
 }
@@ -813,29 +823,46 @@ void SGF(
     ColourFBuffer snapshot( bufWidth, bufHeight );
     snapshot.clear( ColourF::s_black );
 
-    static const float vScaleRecp = 1.0f / (std::max(bufWidth, bufHeight) * 0.5f);
+    static const float vScaleRecp = 3.0f / (std::max(bufWidth, bufHeight) * 0.5f);
 
     snapshot.forEach( [&]( const int32_t index, ColourF& c ) {
         {
-            float v = sgfOut[index].x * vScaleRecp;
+            const float vx     = sgfOut[index].x * vScaleRecp;
+            const float abs_vx = std::abs( vx );
 
-            HSV_to_RGB( 0.5f + (clamp1n1(v) * 0.5f), 1.0f, ( sgfOut[index].x < 0.0f ) ? 0.5f : 1.0f, c.r, c.g, c.b );
+            const float vy     = sgfOut[index].y * vScaleRecp;
+            const float abs_vy = std::abs( vy );
+
+            c = ColourF::gradientPlasma( pingpong01( abs_vx ) );
+            if ( vx < 0.0f )
+                c = ColourF( c.b, c.g, c.r );
+
+            ColourF c2 = ColourF::gradientPlasma( pingpong01( abs_vy ) );
+            if ( vy < 0.0f )
+                c2 = ColourF( c2.b, c2.g, c2.r );
+
+            c.g = 0;
+            c.b = c2.b;
         }
     });
 
     sprintf( _snapPath, DEBUG_DEEP_MASK_RELDIR "sgf/result_x.png" );
-    writeOutBufferAsImage( snapshot, _snapPath, OutputFormat::AsPNG );
+    writeOutBufferAsImage( snapshot, _snapPath, OutputFormat::AsPNG, true );
 
     snapshot.forEach( [&]( const int32_t index, ColourF& c ) {
         {
-            float v = sgfOut[index].y * vScaleRecp;
+            const float vx = sgfOut[index].x * vScaleRecp;
+            const float abs_vx = std::abs( vx );
 
-            HSV_to_RGB( 0.5f + (clamp1n1(v) * 0.5f), 1.0f, ( sgfOut[index].y < 0.0f ) ? 0.5f : 1.0f, c.r, c.g, c.b );
+            const float vy = sgfOut[index].y * vScaleRecp;
+            const float abs_vy = std::abs( vy );
+
+            c = ColourF::gradientViridis( std::max( abs_vx, abs_vy ) * 0.5f );
         }
     });
 
     sprintf( _snapPath, DEBUG_DEEP_MASK_RELDIR "sgf/result_y.png" );
-    writeOutBufferAsImage( snapshot, _snapPath, OutputFormat::AsPNG);
+    writeOutBufferAsImage( snapshot, _snapPath, OutputFormat::AsPNG, true );
     
 #endif // DEBUG_DEEP_MASK_PHASES
 }

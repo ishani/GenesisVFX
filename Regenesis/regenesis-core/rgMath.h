@@ -30,6 +30,19 @@ rginline double constraind(const double v, const double low, const double high)
 }
 
 // ---------------------------------------------------------------------------------------------
+rginline float pingpong01( const float t )
+{
+    const int32_t flip = (int32_t)t;
+
+    const float fractional = fractf( t );
+
+    if ( flip % 2 == 0 )
+        return fractional;
+    else
+        return 1.0f - fractional;
+}
+
+// ---------------------------------------------------------------------------------------------
 rginline constexpr uint32_t hashMixUInt32( uint32_t u32v, uint32_t uMix = c_hashPrime32_1 )
 {
     dbg_ensure( uMix != 0 );

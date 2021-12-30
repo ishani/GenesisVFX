@@ -170,7 +170,7 @@ int main(int argc, char* argv[])
     }
 
     MaskProcessSettings maskSettings;
-    maskSettings.m_distortionMode = MaskProcessSettings::DistortionMode::Celluar;
+    maskSettings.m_distortionMode = MaskProcessSettings::DistortionMode::None;
 
     RenderTweaks tweaks;
     tweaks.masking.m_renderMaskElementsSeparately = false;
@@ -180,6 +180,7 @@ int main(int argc, char* argv[])
     tweaks.m_protectAlpha = true;
 
     RenderGlobals globals;
+    globals.m_scale = 0.2f;
  
     if ( opt_center->count() )
     {

@@ -530,30 +530,6 @@ bool RenderMemory(
 
 #ifdef WIN32
 
-
-#ifdef __cplusplus  // use C-style linking
-extern "C" {
-#endif
-
-    // link to Intel libraries
-    extern int64_t __intel_cpu_feature_indicator;    // CPU feature bits
-    extern int64_t __intel_cpu_feature_indicator_x;  // CPU feature bits
-    void __intel_cpu_features_init();                // unfair dispatcher: checks CPU features for Intel CPU's only
-    void __intel_cpu_features_init_x();              // fair dispatcher: checks CPU features without discriminating by CPU brand
-
-#ifdef __cplusplus
-}  // end of extern "C"
-#endif
-
-void intel_cpu_patch() {
-    // force a re-evaluation of the CPU features without discriminating by CPU brand
-    __intel_cpu_feature_indicator = 0;
-    __intel_cpu_feature_indicator_x = 0;
-    __intel_cpu_features_init_x();
-    __intel_cpu_feature_indicator = __intel_cpu_feature_indicator_x;
-}
-
-
 // ------------------------------------------------------------------------------------------------
 //
 BOOLEAN WINAPI DllMain( IN HINSTANCE hDllHandle,
@@ -563,7 +539,6 @@ BOOLEAN WINAPI DllMain( IN HINSTANCE hDllHandle,
     switch ( nReason )
     {
         case DLL_PROCESS_ATTACH:
-            intel_cpu_patch();
             DisableThreadLibraryCalls( hDllHandle );
             {
                 // do one-off setup tasks

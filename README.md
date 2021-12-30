@@ -28,6 +28,11 @@ Later, a **Genesis VFX 2.0 PRO** version shipped with a less *Kai's Power Tools*
 
 ![photoshop UI from version 2](Images/ui_photoshop_v2s.png)
 
+My interest in Genesis stems from my involvement in its early testing and development. Andrew and I crossed paths in the burgeoning 3dsmax plugin development scene and he ended up a source of encouragement and inspiration when it came to my own attempts at visual effects development.
+
+I ended up creating a number of popular preset packs for the product launch as well as offering guidance for the 3dsmax version. In the last decade my personal site has held a small shrine to Genesis, housing any old builds I could find and a short history of the project. I consider all the work on this repo to be (probably) the final form of my obsession with it!
+
+
 <br><hr><br>
 
 ## The Present - *regenesis*

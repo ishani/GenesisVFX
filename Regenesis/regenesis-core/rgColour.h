@@ -15,6 +15,7 @@ class ColourF;
 class ColourI8;
 class ColourHSV;
 
+
 // ------------------------------------------------------------------------------------------------
 // RGBA, float
 //
@@ -215,11 +216,41 @@ public:
             a + rhs.a );
     }
 
+    friend rginline ColourF operator*( const float lhs, const ColourF& rhs )
+    {
+        return ColourF( rhs.r * lhs, rhs.g * lhs, rhs.b * lhs, rhs.a * lhs );
+    }
+
     rginline constexpr float ComputeIntensity() const
     {
         const float lum_blend = ( r * 0.2989f ) + ( g * 0.5870f ) + ( b * 0.1140f );
 
         return saturate( lum_blend );
+    }
+
+    rginline static ColourF gradientViridis( const float t )
+    {
+        constexpr static ColourF c0 {  0.2777273272234177f,  0.005407344544966578f,  0.3340998053353061f  };
+        constexpr static ColourF c1 {  0.1050930431085774f,  1.404613529898575f,     1.384590162594685f   };
+        constexpr static ColourF c2 { -0.3308618287255563f,  0.214847559468213f,     0.09509516302823659f };
+        constexpr static ColourF c3 { -4.634230498983486f,  -5.799100973351585f,   -19.33244095627987f    };
+        constexpr static ColourF c4 {  6.228269936347081f,  14.17993336680509f,     56.69055260068105f    };
+        constexpr static ColourF c5 {  4.776384997670288f, -13.74514537774601f,    -65.35303263337234f    };
+        constexpr static ColourF c6 { -5.435455855934631f,   4.645852612178535f,    26.3124352495832f     };
+
+        return (c0 + t * (c1 + t * (c2 + t * (c3 + t * (c4 + t * (c5 + t * c6))))));
+    }
+    rginline static ColourF gradientPlasma( const float t )
+    {
+        constexpr static ColourF c0 {   0.05873234392399702f, 0.02333670892565664f, 0.5433401826748754f  };
+        constexpr static ColourF c1 {   2.176514634195958f,   0.2383834171260182f,  0.7539604599784036f  };
+        constexpr static ColourF c2 {  -2.689460476458034f,  -7.455851135738909f,   3.110799939717086f   };
+        constexpr static ColourF c3 {   6.130348345893603f,  42.3461881477227f,   -28.51885465332158f    };
+        constexpr static ColourF c4 { -11.10743619062271f,  -82.66631109428045f,   60.13984767418263f    };
+        constexpr static ColourF c5 {  10.02306557647065f,   71.41361770095349f,  -54.07218655560067f    };
+        constexpr static ColourF c6 {  -3.658713842777788f, -22.93153465461149f,   18.19190778539828f    };
+
+        return (c0 + t * (c1 + t * (c2 + t * (c3 + t * (c4 + t * (c5 + t * c6))))));
     }
 };
 

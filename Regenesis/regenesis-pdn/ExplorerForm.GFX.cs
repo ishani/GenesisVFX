@@ -15,6 +15,7 @@ using ICSharpCode.SharpZipLib.Zip;
 
 using Asphalt.Controls;
 using Asphalt.Controls.Theme;
+using PaintDotNet;
 
 namespace GenesisVFX
 {
@@ -23,11 +24,23 @@ namespace GenesisVFX
         private readonly Size          _thumbnailSize = new Size( 220, 118 );
         private readonly int           _thumbnailGap  = 10;
 
+        private static double ConvertToPixels( double length, UIScaleFactor lengthScale, UIScaleFactor targetScale )
+        {
+            return length / lengthScale.Scale * targetScale.Scale;
+        }
+
+        private static int ConvertToPixelsInt( double length, UIScaleFactor lengthScale, UIScaleFactor targetScale )
+        {
+            return (int)Math.Round( ConvertToPixels( length, lengthScale, targetScale ), MidpointRounding.AwayFromZero );
+        }
+
         // scale thumbnail size to the current DPI
         private Size GetScaledThumbnailSize()
         {
-            var sWidth  = PaintDotNet.UIScaleFactor.ConvertToPixelsInt( _thumbnailSize.Width,  PaintDotNet.UIScaleFactor.Minimum, PaintDotNet.UIScaleFactor.Current );
-            var sHeight = PaintDotNet.UIScaleFactor.ConvertToPixelsInt( _thumbnailSize.Height, PaintDotNet.UIScaleFactor.Minimum, PaintDotNet.UIScaleFactor.Current );
+            UIScaleFactor pdn_minimum = PaintDotNet.UIScaleFactor.FromDpi(96);
+
+            var sWidth  = ConvertToPixelsInt( _thumbnailSize.Width,  pdn_minimum, PaintDotNet.UIScaleFactor.Current );
+            var sHeight = ConvertToPixelsInt( _thumbnailSize.Height, pdn_minimum, PaintDotNet.UIScaleFactor.Current );
             return new Size( sWidth, sHeight );
         }
 
